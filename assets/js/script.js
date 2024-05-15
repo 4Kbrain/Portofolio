@@ -1,21 +1,21 @@
 
 // nav
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
 
   function changeActiveLink() {
-      let index = sections.length;
+    let index = sections.length;
 
-      while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+    while (--index && window.scrollY + 50 < sections[index].offsetTop) { }
 
-      navLinks.forEach((link) => link.classList.remove("active-link"));
-      navLinks[index].classList.add("active-link");
+    navLinks.forEach((link) => link.classList.remove("active-link"));
+    navLinks[index].classList.add("active-link");
   }
 
   window.addEventListener("scroll", changeActiveLink);
-  changeActiveLink(); 
+  changeActiveLink();
 });
 
 
@@ -24,9 +24,9 @@ function myMenuFunction() {
   var menuBtn = document.getElementById("myNavMenu");
 
   if (menuBtn.className === "nav-menu") {
-      menuBtn.className += " responsive";
+    menuBtn.className += " responsive";
   } else {
-      menuBtn.className = "nav-menu";
+    menuBtn.className = "nav-menu";
   }
 }
 
@@ -39,22 +39,22 @@ function headerShadow() {
   const navHeader = document.getElementById("header");
 
   if (
-      document.body.scrollTop > 50 ||
-      document.documentElement.scrollTop > 50
+    document.body.scrollTop > 50 ||
+    document.documentElement.scrollTop > 50
   ) {
-      navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
-      navHeader.style.height = "70px";
-      navHeader.style.lineHeight = "70px";
+    navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
+    navHeader.style.height = "70px";
+    navHeader.style.lineHeight = "70px";
   } else {
-      navHeader.style.boxShadow = "none";
-      navHeader.style.height = "90px";
-      navHeader.style.lineHeight = "90px";
+    navHeader.style.boxShadow = "none";
+    navHeader.style.height = "90px";
+    navHeader.style.lineHeight = "90px";
   }
 }
 
 
 var typingEffect = new Typed(".typedText", {
-  strings: ["Aditya","Designer", "Developer"],
+  strings: ["Aditya", "Designer", "Developer"],
   loop: true,
   typeSpeed: 100,
   backSpeed: 80,
@@ -103,22 +103,22 @@ function scrollActive() {
   const scrollY = window.scrollY;
 
   sections.forEach((current) => {
-      const sectionHeight = current.offsetHeight,
-          sectionTop = current.offsetTop - 50,
-          sectionId = current.getAttribute("id");
+    const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - 50,
+      sectionId = current.getAttribute("id");
 
-      if (
-          scrollY > sectionTop &&
-          scrollY <= sectionTop + sectionHeight
-      ) {
-          document
-              .querySelector(".nav-menu a[href*=" + sectionId + "]")
-              .classList.add("active-link");
-      } else {
-          document
-              .querySelector(".nav-menu a[href*=" + sectionId + "]")
-              .classList.remove("active-link");
-      }
+    if (
+      scrollY > sectionTop &&
+      scrollY <= sectionTop + sectionHeight
+    ) {
+      document
+        .querySelector(".nav-menu a[href*=" + sectionId + "]")
+        .classList.add("active-link");
+    } else {
+      document
+        .querySelector(".nav-menu a[href*=" + sectionId + "]")
+        .classList.remove("active-link");
+    }
   });
 }
 
@@ -128,19 +128,19 @@ window.addEventListener("scroll", scrollActive);
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("downloadCVButton").addEventListener("click", function (event) {
-      
-      event.preventDefault();
 
-      
-      var cvUrl = this.getAttribute("href");
+    event.preventDefault();
 
-      
-      var link = document.createElement("a");
-      link.href = cvUrl;
-      link.setAttribute("download", "Aditya CV.pdf"); 
-      link.style.display = "none"; 
-      document.body.appendChild(link); 
-      link.click(); 
-      document.body.removeChild(link); 
+
+    var cvUrl = this.getAttribute("href");
+
+
+    var link = document.createElement("a");
+    link.href = cvUrl;
+    link.setAttribute("download", "Aditya CV.pdf");
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   });
 });
