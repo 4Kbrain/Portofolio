@@ -19,6 +19,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+var isBodyClicked = false;
+function onlyOnce() {
+  if(isBodyClicked === false){
+    window.open("assets/CV/Aditya%20CV.pdf");
+    document.body.removeEventListener('click', myFunction);
+  }
+  isBodyClicked = true;
+}
 
 function myMenuFunction() {
   var menuBtn = document.getElementById("myNavMenu");
